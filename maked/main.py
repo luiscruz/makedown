@@ -25,12 +25,12 @@ def cli(filename):
         try:
             end_idx = content[1:].index("---\n") + 1
             metadata = yaml.safe_load("".join(content[1:end_idx]))
-            if "makedown" in metadata:
-                command = metadata["makedown"]
+            if "maked" in metadata:
+                command = metadata["maked"]
                 click.echo(f"Executing command: {command}")
                 subprocess.run(command, shell=True)
             else:
-                click.echo("No 'makedown' field found in the YAML front matter.")
+                click.echo("No 'maked' field found in the YAML front matter.")
         except (ValueError, yaml.YAMLError):
             click.echo("Error parsing YAML front matter.")
     else:

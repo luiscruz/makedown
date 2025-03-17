@@ -1,4 +1,4 @@
-# Makedown: A Command-Line Tool to Automate Markdown Processing
+# Maked: A Command-Line Tool to Automate Markdown Processing
 
 Makedown is a simple yet powerful command-line tool that automates the execution of shell commands embedded within Markdown files. By reading the YAML front matter, Makedown extracts and runs commands, making it perfect for use cases like automating document generation or code execution from Markdown.
 
@@ -16,13 +16,13 @@ Makedown can be easily installed using Poetry, Python’s dependency management 
 ### Install via Poetry
 
 ```bash
-poetry add makedown
+poetry add maked
 ```
 
 Alternatively, you can install it globally using `pip`:
 
 ```bash
-pip install makedown
+pip install maked
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ Once installed, you can use Makedown directly from the command line.
 ### Run with a File
 
 ```
-makedown example.md
+maked example.md
 ```
 
 #### Run with Stdin
@@ -40,12 +40,12 @@ makedown example.md
 You can also pipe content to Makedown:
 
 ```bash
-echo -e "---\nmakedown: 'pandoc example.md -o output.pdf'\n---\nSome content here" | makedown
+echo -e "---\nmaked: 'pandoc example.md -o output.pdf'\n---\nSome content here" | maked
 ```
 
 ## What It Does
 
-The script looks for the makedown field in the YAML front matter of a Markdown file or stdin.
+The script looks for the maked field in the YAML front matter of a Markdown file or stdin.
 It executes the corresponding shell command (e.g., pandoc, make, etc.).
 If the front matter is missing or incorrectly formatted, Makedown gracefully handles errors and displays relevant messages.
 
@@ -59,12 +59,12 @@ If the front matter is missing or incorrectly formatted, Makedown gracefully han
 
 ```markdown
 ---
-makedown: 'pandoc example.md -o example.pdf'
+maked: 'pandoc example.md -o example.pdf'
 ---
 
 # Example Markdown File
 
-This is an example of a Markdown file with a YAML front matter that includes a `makedown` field to execute a shell command.
+This is an example of a Markdown file with a YAML front matter that includes a `maked` field to execute a shell command.
 ```
 
 ## Contributing

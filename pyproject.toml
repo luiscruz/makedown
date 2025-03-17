@@ -1,5 +1,5 @@
 [project]
-name = "makedown"
+name = "maked"
 version = "0.1.0"
 description = "A CLI tool to execute commands inside Markdown files"
 authors = [
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [tool.poetry.scripts]
-makedown = "makedown.main:cli"
+maked = "maked.main:cli"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
